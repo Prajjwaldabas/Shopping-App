@@ -1,7 +1,7 @@
 const Item= require("../models/Item");
 
 
-//function to find all item from database
+//function to find all items from database
 module.exports.find=(req,res)=>{
 
     Item.find()
