@@ -1,0 +1,134 @@
+.products{
+    padding: 30px 50px;
+    display: flex;
+
+    .left{
+flex: 1;
+position: sticky;
+height:100%;
+top: 50px;
+
+.filterItem{
+    margin-bottom: 30px;
+
+    h2{
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+    .inputItem{
+        margin-bottom:10px;
+        label{
+            margin-left:10px;
+        }
+    }
+}
+    }
+    .right{
+flex: 3;
+position: relative;
+
+.addNew{
+    position: absolute;
+    background-color: #2879fe;
+    color: white;
+    font-size: 16px;
+    font: 600;
+    border: none;
+    padding: 10px;
+    top: -101px;
+    left: -2%;
+    padding: 10px;
+    cursor: pointer;
+
+   
+
+}
+
+form{
+    position: relative;
+    z-index: 9999;
+    height: 300px;
+    top: 10px;
+    left: 26%;
+    border-radius: 10px;
+    background-color: white;
+    margin-left: 11rem;
+    padding: 20px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid rgb(204, 204, 204);
+    width: 400px;
+    bottom: 35px;
+    box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+    transition: all 1s ease;
+    
+    .cancel_btn{
+        position: absolute;
+        background-color: white;
+        font-size: 18px;
+        color: grey;
+        width: 15px;
+        top: 0px;
+        right: 10px;
+    }
+    .cancel_btn:hover{
+background-color: white;
+color: rgb(81, 81, 81);
+
+    }
+    
+
+label{
+    margin-left:5px;
+    color: rgb(96, 96, 96);
+    
+}
+input:focus{
+    outline: none;
+
+}
+
+input{
+    width: 373px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    
+    padding: 5px;
+    border: 2px solid rgb(201, 200, 200);
+}
+
+button{
+background-color: #2879fe;
+color: white;
+font-size: 16px;
+font: 600;
+border: none;
+padding:10px;
+cursor: pointer;
+width: 120px;
+
+}
+button:hover{
+    background-color: #1d70f5;
+
+}
+
+
+
+}
+
+.catImg{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 50px;
+
+}
+    }
+
+
+    }

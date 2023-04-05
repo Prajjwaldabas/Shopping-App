@@ -1,0 +1,126 @@
+
+.CardWrap{
+
+    position: relative;
+
+    &:hover{
+
+        .additems{
+         z-index: 999;
+   
+        }
+    }
+    .additems{
+        position:absolute;
+        top: 30%;
+        left: 5%;
+        z-index: 1;
+        display: flex;
+        gap: 10px;
+        color: rgb(164, 161, 161);
+        align-items: center;
+        
+        justify-content: space-around;
+        width: 250px;
+        border-radius: 30px;
+        
+        
+        height: 50px;
+        // border: 1px solid rgb(198, 33, 33);
+
+        button{
+            cursor: pointer;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;justify-content:center;
+            border-radius: 50%;
+            font-size: 18px;
+            background-color: white;
+            border: none;
+        }
+        
+
+       
+       button:hover{
+            
+            color: rgb(90, 90, 90);
+        }
+
+    }
+
+.card{
+    width:280px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 50px;
+
+   
+
+.image{
+
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    
+
+    
+&:hover{
+
+            .additems{
+             z-index: 999;
+       
+            }
+    
+
+        // .secondImg{
+        //     z-index:2;
+        // }
+
+
+    
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit:cover;
+        position: absolute;
+    }
+    .mainImg{
+       z-index:1; 
+    }
+    .newSeason{
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        background-color: white;
+        color: teal;
+        padding: 3px 5px;
+        z-index: 3;
+        font-weight: 500;
+        font-size: 12px; 
+    }
+}
+    h2{
+        font-style: 16px;
+        font-weight: 400;
+    }
+    .prices{
+        display: flex;
+        gap: 20px;
+    
+    h3{
+        font-size: 18px;
+        font-weight: 500;
+        &:first-child{
+           color: gray;
+           text-decoration: line-through; 
+        }
+    }
+    
+
+}
+}
+}
