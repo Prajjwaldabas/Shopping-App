@@ -47,7 +47,7 @@ module.exports.delete= (req,res)=>{
     Item.findByIdAndDelete({_id:id})
     .then(item => {
       console.log('Item deleted:', item);
-      res.json(item)
+      res.status(200).send({ message: `product deleted successfuly` });
     })
     .catch(err => {
       console.error(err);
@@ -68,15 +68,15 @@ module.exports.update = (req, res) => {
         res
           .status(404)
           .send({
-            message: `Canot update project ${id}.Maybe project not found `,
+            message: `Canot update product ${id}.Maybe product not found `,
           });
       } else {
-        res.json(data);
+        res.status(200).send({ message: `product updated successfuly` });
         console.log("product updated")
       }
     })
     .catch((err) => {
-      res.status(500).send({ message: "Error update the project " });
+      res.status(500).send({ message: "Error update the product " });
     });
 };
 
