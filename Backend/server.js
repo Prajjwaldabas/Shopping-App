@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 //
 app.use(cors());
 app.use(cors({
-    origin: ['http://localhost:3000','https://e-commerce-app.onrender.com']
+    origin: ['http://localhost:3000','https://e-commerce-server-hhpk.onrender.com','https://e-commerce-app-q0tc.onrender.com']
   }));
 //  
 app.use(express.json());
