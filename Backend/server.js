@@ -14,6 +14,11 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 //
 
+// Serve the index.html file for all routes that are not found
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
+
 app.use(cors({
     origin: ['http://localhost:3000','https://e-commerce-server-hhpk.onrender.com','https://e-commerce-app-q0tc.onrender.com']
   }));
