@@ -30,16 +30,16 @@ app.use(cors({
 //  
 app.use(express.json());
 
+
+app.use(express.static(path.join(__dirname, 'client/build')));
+
 // app.use('/users', usersRouter);
 app.use('/',require('./routes/index'))
 
-app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname, 'client/build/index.html'), function(err) {
-    if (err) {
-      res.status(500).send(err)
-    }
-  })
-})
+// Handle client-side routing for React app
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'client/build/index.html'));
+});
 
 
 
