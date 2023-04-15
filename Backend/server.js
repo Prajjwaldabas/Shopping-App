@@ -15,16 +15,16 @@ app.use(bodyParser.urlencoded({extended:true}));
 //
 app.use(cors());
 app.use(cors({
-    origin: ['http://localhost:3000','https://e-commerce-server-hhpk.onrender.com','https://e-commerce-app-q0tc.onrender.com']
-  }));
+  origin: 'https://e-commerce-app-q0tc.onrender.com'
+}));
 
-// // Serve static files from the React app
-// app.use(express.static(path.join(__dirname, 'client/build')));
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
 
-// // Serve the index.html file for all routes that are not found
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname+'/client/build/index.html'));
-// });
+// Serve the index.html file for all routes that are not found
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
 
 
 //  
