@@ -31,7 +31,6 @@ app.use(express.static(path.join(__dirname, 'ShoppingAPP\frontend\e-commerce-app
 app.use('/',require('./routes/index'))
 
 
-
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'ShoppingAPP\frontend\e-commerce-app-frontend\public\index.html'));
 });
