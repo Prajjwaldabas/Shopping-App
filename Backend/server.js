@@ -18,26 +18,20 @@ app.use(cors({
     origin: ['http://localhost:3000','https://e-commerce-server-hhpk.onrender.com','https://e-commerce-app-q0tc.onrender.com']
   }));
 
-// // Serve static files from the React app
-// app.use(express.static(path.join(__dirname, 'client/build')));
 
-// // Serve the index.html file for all routes that are not found
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname+'/client/build/index.html'));
-// });
 
 
 //  
 app.use(express.json());
 
 
-app.use(express.static(path.join(__dirname, 'ShoppingAPP/frontend/e-commerce-app-frontend/public')));
+app.use(express.static(path.join(__dirname, '../ShoppingAPP/frontend/e-commerce-app-frontend/public')));
 
 // app.use('/users', usersRouter);
 app.use('/',require('./routes/index'))
 
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname, 'ShoppingAPP/frontend/e-commerce-app-frontend/public/index.html'), function(err) {
+  res.sendFile(path.join(__dirname, '../ShoppingAPP/frontend/e-commerce-app-frontend/public'), function(err) {
     if (err) {
       res.status(500).send(err)
     }
