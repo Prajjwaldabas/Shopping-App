@@ -13,6 +13,10 @@ const PORT = process.env.PORT || 8000;
 app.use(bodyParser.urlencoded({extended:true}));
 
 //
+app.use(cors());
+app.use(cors({
+    origin: ['http://localhost:3000','https://e-commerce-server-hhpk.onrender.com','https://e-commerce-app-q0tc.onrender.com']
+  }));
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
@@ -22,10 +26,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
-app.use(cors());
-app.use(cors({
-    origin: ['http://localhost:3000','https://e-commerce-server-hhpk.onrender.com','https://e-commerce-app-q0tc.onrender.com']
-  }));
+
 //  
 app.use(express.json());
 
