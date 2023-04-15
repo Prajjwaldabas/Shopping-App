@@ -3,7 +3,6 @@ const app = express();
 const dotenv= require('dotenv');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-
 const path = require('path')
 const db = require('./Database/Mongoose');
 
@@ -12,12 +11,20 @@ const PORT = process.env.PORT || 8000;
 
 app.use(bodyParser.urlencoded({extended:true}));
 
-//
-app.use(cors());
+// Configure CORS middleware to allow all origins
 app.use(cors({
-  origin: 'https://e-commerce-app-q0tc.onrender.com'
+  origin: '*'
 }));
 
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+// Serve the index.html file for all routes that are not found
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
+
+// Enable CORS preflight
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
@@ -28,23 +35,13 @@ app.use((req, res, next) => {
   next();
 });
 
-
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'client/build')));
-
-// Serve the index.html file for all routes that are not found
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
-});
-
-
-//  
+// Enable JSON parsing middleware
 app.use(express.json());
 
-// app.use('/users', usersRouter);
+// Use the index route
 app.use('/',require('./routes/index'))
 
-
-app.listen (PORT,()=>{
-    console.log(`Server is running on port: ${PORT}`)
-})
+// Start the server
+app.listen(PORT,()=>{
+  console.log(`Server is running on port: ${PORT}`)
+});
