@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 //
 app.use(cors());
 app.use(cors({
-    origin: ['http://localhost:3000','https://e-commerce-server-hhpk.onrender.com','https://e-commerce-app-q0tc.onrender.com']
+    origin: ['http://localhost:3000' , 'https://my-shopping-app-ec57.onrender.com']
   }));
 
 
@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, '../ShoppingAPP/frontend/e-commerce-
 app.use('/',require('./routes/index'))
 
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname, '../ShoppingAPP/frontend/e-commerce-app-frontend/public'), function(err) {
+  res.sendFile(path.join(__dirname, '../ShoppingAPP/frontend/e-commerce-app-frontend/public/index.html'), function(err) {
     if (err) {
       res.status(500).send(err)
     }
