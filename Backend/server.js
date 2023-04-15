@@ -17,8 +17,11 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
+app.use(cors());
+
+const allowedOrigins = ['http://localhost:3000', 'https://e-commerce-app-q0tc.onrender.com'];
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://e-commerce-app-q0tc.onrender.com']
+  origin: allowedOrigins
 }));
 
 app.use(express.json());
