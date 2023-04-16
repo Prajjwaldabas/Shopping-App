@@ -25,6 +25,7 @@ module.exports.create= (req,res)=>{
         price: req.body.price,
         description: req.body.description,
         imageUrl: req.body.imageUrl,
+        category:req.body.category,
       });
       
       newItem.save()
