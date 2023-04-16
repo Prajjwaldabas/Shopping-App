@@ -25,17 +25,17 @@ app.use(cors({
 app.use(express.json());
 
 
-app.use(express.static(path.join(__dirname, '../frontend/e-commerce-frontend/public')));
+// app.use(express.static(path.join(__dirname, '../frontend/e-commerce-frontend/public')));
 
-// app.use('/users', usersRouter);
-app.use('/',require('./routes/index'))
-
-
+// // app.use('/users', usersRouter);
+// app.use('/',require('./routes/index'))
 
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/e-commerce-app-frontend/public/index.html'));
-});
+
+
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../frontend/e-commerce-app-frontend/public/index.html'));
+// });
 
 
 
