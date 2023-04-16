@@ -28,7 +28,7 @@ app.use(express.json());
 // app.use(express.static(path.join(__dirname, '../frontend/e-commerce-frontend/public')));
 
 // // app.use('/users', usersRouter);
-// app.use('/',require('./routes/index'))
+app.use('/',require('./routes/index'))
 
 
 
