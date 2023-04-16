@@ -31,10 +31,10 @@ app.use(express.json());
 app.use('/',require('./routes/index'))
 
 
-app.use(express.static(path.join(__dirname, '../frontend/e-commerce-frontend/public')));
+// app.use(express.static(path.join(__dirname, '../frontend/e-commerce-frontend/public')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/e-commerce-frontend/public/index.html'));
+  res.sendFile(path.join(__dirname, '../frontend/e-commerce-app-frontend/public/index.html'));
 });
 
 
