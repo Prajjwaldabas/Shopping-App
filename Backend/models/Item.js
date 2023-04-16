@@ -19,6 +19,10 @@ const itemSchema = new mongoose.Schema({
     type: String,
    
   },
+  category: {
+    type: String,
+   
+  },
 });
 
 const Item = mongoose.model('Item', itemSchema);
