@@ -40,46 +40,28 @@ module.exports.create= (req,res)=>{
 
 }
 
-// function to delete the itemm from database
-module.exports.delete= (req,res)=>{
-
-    const id = req.params.id;
-
-    Item.findByIdAndDelete({_id:id})
-    .then(item => {
-      console.log('Item deleted:', item);
-      res.status(200).send({ message: `product deleted successfuly` });
-    })
-    .catch(err => {
-      console.error(err);
-    });
-
-}
-
-
-// // update a new project by project id
+// update a new project by project id
 module.exports.update = (req, res) => {
   if (!req.body) {
     return res.status(404).send({ message: "Data to update can not be empty" });
   }
   const id = req.params.id;
-  Item.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+  Item.findByIdAndUpdate(id, req.body, { useFindAndModify: false, new: true }) // add {new: true} option
     .then((data) => {
       if (!data) {
-        res
-          .status(404)
-          .send({
-            message: `Canot update product ${id}.Maybe product not found `,
-          });
+        res.status(404).send({
+          message: `Cannot update product ${id}. Maybe product not found.`,
+        });
       } else {
-        res.status(200).send({ message: `product updated successfuly` });
-        console.log("product updated")
+        res.status(200).send(data); // send back the updated product
+        console.log("Product updated:", data);
       }
     })
     .catch((err) => {
-      res.status(500).send({ message: "Error update the product " });
+      res.status(500).send({ message: "Error updating the product." });
     });
 };
+
 
 
 //function to show details for a specific item
