@@ -40,6 +40,24 @@ module.exports.create= (req,res)=>{
 
 }
 
+// function to delete the itemm from database
+module.exports.delete= (req,res)=>{
+
+    const id = req.params.id;
+
+    Item.findByIdAndDelete({_id:id})
+    .then(item => {
+      console.log('Item deleted:', item);
+      res.status(200).send({ message: `product deleted successfuly` });
+    })
+    .catch(err => {
+      console.error(err);
+    });
+
+}
+
+
+// // update a new project by project id
 // update a new project by project id
 module.exports.update = (req, res) => {
   if (!req.body) {
