@@ -58,7 +58,7 @@ module.exports.update = (req, res) => {
       }
     })
     .catch((err) => {
-      res.status(500).send({ message: "Error updating the product" });
+      res.status(500).send({ message: "Error updating in the product" });
     });
 };
 
