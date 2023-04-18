@@ -26,6 +26,7 @@ module.exports.create= (req,res)=>{
         description: req.body.description,
         imageUrl: req.body.imageUrl,
         category:req.body.category,
+        subCategory:req.body.subCategory,
       });
       
       newItem.save()

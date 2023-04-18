@@ -23,6 +23,9 @@ const itemSchema = new mongoose.Schema({
     type: String,
    
   },
+  subCategory:{
+    type:String,
+  }
 });
 
 const Item = mongoose.model('Item', itemSchema);
