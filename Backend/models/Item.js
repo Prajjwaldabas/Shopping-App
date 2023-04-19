@@ -19,6 +19,10 @@ const itemSchema = new mongoose.Schema({
     type: String,
    
   },
+  secimageUrl: {
+    type: String,
+   
+  },
   category: {
     type: String,
    

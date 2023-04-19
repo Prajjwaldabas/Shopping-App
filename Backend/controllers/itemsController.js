@@ -25,6 +25,7 @@ module.exports.create= (req,res)=>{
         price: req.body.price,
         description: req.body.description,
         imageUrl: req.body.imageUrl,
+        secimageUrl: req.body.secimageUrl,
         category:req.body.category,
         subCategory:req.body.subCategory,
       });
