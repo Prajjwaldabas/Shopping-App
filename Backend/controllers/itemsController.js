@@ -15,7 +15,7 @@ module.exports.find=(req,res)=>{
 
 }
 
-//function to create new item in the database
+//function to create new item  the database
 module.exports.create= (req,res)=>{
 
  console.log( req.body)
